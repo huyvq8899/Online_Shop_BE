@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="well well-small">
+    <h3><a class="btn-mini pull-right shopBtn" href="@Url.Action("SanPhamMoi","Home")" title="View more">Xem Thêm</a> Mặt hàng mới </h3>
+    <div class="row-fluid">
+        <div id="newProductCar" class="carousel slide">
+
+            @Html.Action("SanPhamMoiShow", "Home")
+
+        </div>
+    </div>
+
+</div>
+<!--
+mat hang sale
+-->
+<div class="well well-small">
+    <h3><a class="btn-mini pull-right shopBtn" href="@Url.Action("SanPhamSales","Home")" title="View more">Xem Thêm</a> Mặt hàng giảm giá </h3>
+    <div class="row-fluid" style="margin-top:10px">
+        <div id="newProductCar" class="carousel slide">
+            @Html.Action("SanPhamSalesShow", "Home")
+
+        </div>
+    </div>
+</div>

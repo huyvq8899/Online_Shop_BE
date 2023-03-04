@@ -1,0 +1,33 @@
+﻿@using WebQACustomerArea.Models;
+@model  Product
+
+@{
+    ViewBag.Title = "Xem chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="well well-small">
+    <h3>Chi tiết sản phẩm</h3>
+    <hr class="soften" />
+    <div class="row-fluid">
+        <div id="newProductCar" class="carousel slide">
+
+            <div class="thumbnail">
+
+                <a class="zoomTool" href="@Url.Action("themgiohang", "GioHang", new { @masp = Model.Product_Id, @url = Request.Url.ToString() })" title="add to cart">Mua Ngay</a>
+                <a href="#" class="tag"></a>
+                <a href=""><img style="width:70%;height:70%" src="@Url.Content("~/" + Model.Product_Image) " /></a>
+
+
+                <p>Mã sản phẩm: @Model.Product_Show</p>
+                <p> Giá thành:<b>@Model.Product_Price VNĐ</b></p>
+                <p> Size:<b>@Model.Product_Size</b></p>
+                <p>Ghi chú:<b>@Model.Product_Note</b></p>
+                <div id="thongtin">
+                    <p><h4><a class="button shopBtn" href="@Url.Action("themgiohang", "GioHang", new { @masp = Model.Product_Id, @url = Request.Url.ToString() })">Mua ngay</a></h4></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
